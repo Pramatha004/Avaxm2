@@ -59,17 +59,17 @@ export default function HomePage() {
     }
   }
 
-  const prime_sq = async() => {
+  const manufacture = async() => {
     if (atm) {
-      let tx = await atm.prime_square(7);
+      let tx = await atm.manufacture(5);
       await tx.wait()
       getBalance();
     }
   }
 
-  const comp_cube = async() => {
+  const divide = async() => {
     if (atm) {
-      let tx = await atm.composite_cube(6);
+      let tx = await atm.divide(3);
       await tx.wait()
       getBalance();
     }
@@ -93,9 +93,9 @@ export default function HomePage() {
     return (
       <div>
         <p>Your Account: {account}</p>
-        <p>Square/Cube Result: {balance}</p>
-        <button onClick={prime_sq}>Square prime(if prime)</button>
-        <button onClick={comp_cube}>Cube Composite(if comp)</button>
+        <p>manufacture Result: {balance}</p>
+        <button onClick={manufacture}>manufacture 5</button>
+        <button onClick={divide}>divide equally</button>
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function HomePage() {
 
   return (
     <main className="container">
-      <header><h1>Welcome to Prime and Composite Game!</h1><p><i>In this game , if the entered number is a prime number it finds the square of the prime number or if the entered number is a composite number then it finds the cube of the composite number.</i></p></header>
+      <header>manufacture and divide</header>
       {initUser()}
       <style jsx>{`
         .container {
